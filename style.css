@@ -1,0 +1,28 @@
+body {
+  background: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/092/149/original/pexels-pixabay-36717.jpg?1691167809)
+    rgba(3, 3, 3, 0.6);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  height: 200vh;
+  opacity: 10;
+}
+
+.container {
+  color: #fff;
+  margin-left: 100px;
+  padding: 50px;
+  margin-top: 100px;
+  border: 1px solid;
+}
+.weather-boder {
+  border: 1px solid white;
+}
+.fa-solid {
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
