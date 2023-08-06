@@ -18,26 +18,24 @@ body {
   border: 1px solid;
 }
 .weather-boder {
-  border: 1px solid white;
+  border-radius: 10px;
+  border: 1px solid rgb(224, 153, 153);
+  box-shadow: 0 0 50px 5px #f3f3f3;
 }
 .weather-update {
   padding: 10px;
   margin-top: 25rem;
 }
-/*.icon-links {
-  display: flex;
-  justify-content: space-between;
-}*/
-.fa-magnifying-glass {
+
+.btn {
   font-size: 20px;
-  border: 1px solid #d83e35;
+  border: none;
   background-color: #d83e35;
   color: black;
-  padding: 20px 10px 20x;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+}
+.btn:hover {
+  background-color: #bd5e64;
+  color: black;
 }
 .text {
   color: #d83e35;
@@ -62,6 +60,11 @@ li {
 
 @media (max-width: 750px) {
   .weather-update {
-    margin-top: 10rem;
+    margin-top: 5rem;
+  }
+  .btn {
+    font-size: 10px;
+
+    padding: 2px;
   }
 }
