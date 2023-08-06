@@ -1,12 +1,12 @@
 body {
   background: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/092/149/original/pexels-pixabay-36717.jpg?1691167809)
     rgba(3, 3, 3, 0.6);
-
+  font-family: Arial, Helvetica, sans-serif;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: 150vh;
   opacity: 1;
 }
 
@@ -16,6 +16,14 @@ body {
   padding: 50px;
   margin-top: 100px;
   border: 1px solid;
+}
+#temperature {
+  font-size: 40px;
+}
+small {
+  font-size: 10px;
+  position: relative;
+  top: -30px;
 }
 .weather-boder {
   border-radius: 10px;

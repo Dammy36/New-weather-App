@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <script
       src="https://kit.fontawesome.com/3489c941c2.js"
       crossorigin="anonymous"
@@ -23,15 +24,33 @@
           <div class="col-sm">
             Weather App
             <div class="weather-update">
-              <h1>16 C|F London</h1>
-              <div id="current-date">cloud</div>
+              <h1 id="city"></h1>
+              <strong id="temperature"></strong>
+
+              <small>°C | °F</small>
+
+              <span>☀️ sunny</span>
+              <div id="current-date"></div>
             </div>
           </div>
           <div class="col weather-boder">
-            <form class="m-3 icon">
+            <form class="m-3" id="search-form">
               <div class="row">
                 <div class="col-sm">
-                  <input type="text" class="text" placeholder=" Location" />
+                  <input
+                    type="text"
+                    class="text"
+                    placeholder=" Location"
+                    autocomplete="off"
+                    autofocus="off"
+                    id="country"
+                  />
+                  <input
+                    type="submit"
+                    value="search"
+                    id="search-input"
+                    class="text"
+                  />
                 </div>
                 <div class="col-sm-2">
                   <button class="btn w-100">
@@ -54,8 +73,10 @@
             <h6>Weather Details</h6>
             <ul>
               <li class="Weather-details">Precription <span>20%</span></li>
-              <li class="Weather-details">Humidity <span>20%</span></li>
-              <li class="Weather-details">Wind <span>20%</span></li>
+              <li class="Weather-details">
+                Humidity <span id="humidity"></span>
+              </li>
+              <li class="Weather-details">Wind <span id="wind"></span></li>
             </ul>
           </div>
         </div>
