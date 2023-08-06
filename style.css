@@ -1,12 +1,13 @@
 body {
   background: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/092/149/original/pexels-pixabay-36717.jpg?1691167809)
     rgba(3, 3, 3, 0.6);
+
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
-  height: 200vh;
-  opacity: 10;
+  height: 100vh;
+  opacity: 1;
 }
 
 .container {
@@ -19,10 +20,48 @@ body {
 .weather-boder {
   border: 1px solid white;
 }
-.fa-solid {
-  font-size: 50px;
+.weather-update {
+  padding: 10px;
+  margin-top: 25rem;
+}
+/*.icon-links {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+}*/
+.fa-magnifying-glass {
+  font-size: 20px;
+  border: 1px solid #d83e35;
+  background-color: #d83e35;
+  color: black;
+  padding: 20px 10px 20x;
+  display: flex;
   justify-content: center;
-  margin-top: 100px;
+  align-items: center;
+  overflow: hidden;
+}
+.text {
+  color: #d83e35;
+  background-color: rgb(231, 225, 225);
+  border: none;
+}
+h6 {
+  padding: 10px;
+  line-height: 1.5;
+  opacity: 0.6;
+}
+li {
+  list-style: none;
+  font-size: 20px;
+  line-height: 1.5;
+}
+.Weather-details {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+@media (max-width: 750px) {
+  .weather-update {
+    margin-top: 10rem;
+  }
 }
