@@ -19,7 +19,7 @@ body {
 }
 .weather-boder {
   border-radius: 10px;
-  border: 1px solid rgb(224, 153, 153);
+
   box-shadow: 0 0 50px 5px #f3f3f3;
 }
 .weather-update {
