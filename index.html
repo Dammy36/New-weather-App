@@ -29,7 +29,13 @@
 
               <small>°C | °F</small>
 
-              <span>☀️ sunny</span>
+              <span id="icon">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                  alt=""
+                />
+              </span>
+              <span id="description"></span>
               <div id="current-date"></div>
             </div>
           </div>
@@ -41,8 +47,6 @@
                     type="text"
                     class="text"
                     placeholder=" Location"
-                    autocomplete="off"
-                    autofocus="off"
                     id="country"
                   />
                   <input
@@ -60,15 +64,9 @@
               </div>
             </form>
 
-            <h6>Another location</h6>
+            <h6>Weather Forcast</h6>
             <hr />
-            <ul>
-              <li>Paris</li>
-              <li>London</li>
-              <li>Tokyo</li>
-              <li>New-York</li>
-              <li>Lagos</li>
-            </ul>
+            <div id="forecast"></div>
             <hr />
             <h6>Weather Details</h6>
             <ul>

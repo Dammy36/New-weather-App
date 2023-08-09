@@ -26,34 +26,70 @@ function currentTime(now) {
   if (hour < 10) {
     hour = `0${minutes}`;
   }
-  return `${month}  ${day}  ${hour} : ${minutes}`;
+
+  return `${month} ${day}  ${hour} : ${minutes}`;
 }
 
 currentWeather = document.querySelector("#current-date");
 currentWeather.innerHTML = currentTime(now);
 
 function showTemperature(response) {
-  console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
   let humidity = Math.round(response.data.main.humidity);
   let wind = Math.round(response.data.wind.speed);
-  let name = response.data.name;
+  let city = response.data.name;
+  let description = response.data.weather[0].description;
+  let weatherIcon = response.data.weather[0].icon;
 
+  let currentDate = document.querySelector("#current-date");
   document.querySelector("#temperature").innerHTML = `${temperature}`;
-  document.querySelector("#city").innerHTML = `${name}`;
+  document.querySelector("#city").innerHTML = `${city}`;
   document.querySelector("#humidity").innerHTML = `${humidity}`;
   document.querySelector("#wind").innerHTML = `${wind}`;
+  document.querySelector("#description").innerHTML = `${description}`;
+
+  icon.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${weatherIcon}@2x.png`
+  );
 }
+function search(city) {
+  let apiKey = "dfade740b7c139f8be2d4b268ca337e7";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
-let apiKey = "dfade740b7c139f8be2d4b268ca337e7";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=lagos&appid=dfade740b7c139f8be2d4b268ca337e7&units=metric`;
-
-axios.get(apiUrl).then(showTemperature);
+  axios.get(apiUrl).then(showTemperature);
+}
 
 function handleSubmit(event) {
   event.preventDefault();
-  let location = document.querySelector("country").value;
+  let searchInput = document.querySelector("#country");
+  search(searchInput.value);
 }
 
 let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("click", handleSubmit);
+searchForm.addEventListener("submit", handleSubmit);
+
+search("New York");
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forcastHTML = `<ul>`;
+  let dayss = ["MON", "TUE", "WED", "THU", "FRI"];
+  dayss.forEach(function (day) {
+    forcastHTML =
+      forcastHTML +
+      ` 
+ <li class="Weather-details"> ${day}
+ <span class="weather-forecast-max">
+ 18° <span class="weather-forecast-min">20°</span></span
+ <span> ☀️</span>
+ </li>
+`;
+  });
+
+  forcastHTML = forcastHTML + `</ul>`;
+  forecastElement.innerHTML = forcastHTML;
+}
+
+displayForecast();
