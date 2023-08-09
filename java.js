@@ -34,7 +34,8 @@ currentWeather = document.querySelector("#current-date");
 currentWeather.innerHTML = currentTime(now);
 
 function showTemperature(response) {
-  let temperature = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+  let temperature = Math.round(celsiusTemperature);
   let humidity = Math.round(response.data.main.humidity);
   let wind = Math.round(response.data.wind.speed);
   let city = response.data.name;
@@ -68,8 +69,6 @@ function handleSubmit(event) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
-search("New York");
-
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
 
@@ -91,4 +90,25 @@ function displayForecast() {
   forecastElement.innerHTML = forcastHTML;
 }
 
+function displayCelsius(event) {
+  event.preventDefault();
+
+  let temperature = document.querySelector("#temperature");
+  temperature.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsius = document.querySelector("#celsius");
+celsius.addEventListener("click", displayCelsius);
+
+function displayFahrenheit(event) {
+  event.preventDefault();
+  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
+  let temperature = document.querySelector("#temperature");
+  temperature.innerHTML = Math.round(fahrenheitTemp);
+}
+let fahrenheit = document.querySelector("#fahrenheit");
+fahrenheit.addEventListener("click", displayFahrenheit);
+
+let celsiusTemperature = null;
+search("New York");
 displayForecast();
