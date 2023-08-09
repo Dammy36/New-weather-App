@@ -41,14 +41,13 @@ function showTemperature(response) {
   let description = response.data.weather[0].description;
   let weatherIcon = response.data.weather[0].icon;
 
-  let currentDate = document.querySelector("#current-date");
   document.querySelector("#temperature").innerHTML = `${temperature}`;
   document.querySelector("#city").innerHTML = `${city}`;
   document.querySelector("#humidity").innerHTML = `${humidity}`;
   document.querySelector("#wind").innerHTML = `${wind}`;
   document.querySelector("#description").innerHTML = `${description}`;
-
-  icon.setAttribute(
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
     "src",
     `https://openweathermap.org/img/wn/${weatherIcon}@2x.png`
   );

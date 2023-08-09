@@ -26,15 +26,13 @@
             <div class="weather-update">
               <h1 id="city"></h1>
               <strong id="temperature"></strong>
-
               <small>°C | °F</small>
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                alt=""
+                id="icon"
+              />
 
-              <span id="icon">
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                  alt=""
-                />
-              </span>
               <span id="description"></span>
               <div id="current-date"></div>
             </div>
@@ -47,17 +45,13 @@
                     type="text"
                     class="text"
                     placeholder=" Location"
+                    autocomplete="off"
+                    autofocus="off"
                     id="country"
-                  />
-                  <input
-                    type="submit"
-                    value="search"
-                    id="search-input"
-                    class="text"
                   />
                 </div>
                 <div class="col-sm-2">
-                  <button class="btn w-100">
+                  <button class="btn" id="search-input">
                     <i class="fa-solid fa-magnifying-glass"></i>
                   </button>
                 </div>
