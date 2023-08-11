@@ -33,6 +33,13 @@ function currentTime(now) {
 currentWeather = document.querySelector("#current-date");
 currentWeather.innerHTML = currentTime(now);
 
+function getForecast(coordinates) {
+  let apiKey = "dfade740b7c139f8be2d4b268ca337e7";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+  console.log(apiUrl);
+}
+
 function showTemperature(response) {
   celsiusTemperature = response.data.main.temp;
   let temperature = Math.round(celsiusTemperature);
@@ -52,6 +59,7 @@ function showTemperature(response) {
     "src",
     `https://openweathermap.org/img/wn/${weatherIcon}@2x.png`
   );
+  getForecast(response.data.coord);
 }
 function search(city) {
   let apiKey = "dfade740b7c139f8be2d4b268ca337e7";
@@ -69,7 +77,8 @@ function handleSubmit(event) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let forcastHTML = `<ul>`;
@@ -92,7 +101,6 @@ function displayForecast() {
 
 function displayCelsius(event) {
   event.preventDefault();
-
   let temperature = document.querySelector("#temperature");
   temperature.innerHTML = Math.round(celsiusTemperature);
 }
@@ -110,5 +118,4 @@ let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", displayFahrenheit);
 
 let celsiusTemperature = null;
-search("New York");
-displayForecast();
+search("Nigeria");
