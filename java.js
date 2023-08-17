@@ -41,7 +41,6 @@ function formateDay(timestamp) {
 }
 
 function displayForecast(response) {
-  console.log(response.data.daily);
   let forcaste = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
@@ -134,4 +133,4 @@ let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", displayFahrenheit);
 
 let celsiusTemperature = null;
-search("Nigeria");
+search("Lagos");

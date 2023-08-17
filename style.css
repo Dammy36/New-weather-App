@@ -8,7 +8,6 @@ body {
   background-position: center;
   height: 100vh;
   opacity: 1;
-  margin: 0;
 }
 
 .container {
@@ -82,6 +81,10 @@ li {
 }
 
 @media (max-width: 750px) {
+  .container {
+    margin-top: 0;
+    margin-left: 0;
+  }
   .weather-update {
     margin-top: 5rem;
   }
